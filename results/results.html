@@ -1,34 +1,12 @@
 <form name="myForm">
-    <!-- <label>URL: -->
     <input type="text" name="input" ng-model="url" required>
     <input type="submit" ng-click="getTags(url)" value="Go" />
-    <!-- </label> -->
-    <div role="alert">
-        <!-- <span class="error" ng-show="myForm.input.$error.required">
-            Required!
-        </span>
-        <span class="error" ng-show="myForm.input.$error.url">
-            Not valid url!
-        </span> -->
-    </div>
-    <!-- <tt>text = {{url.text}}</tt>
-    <br/>
-    <tt>myForm.input.$valid = {{myForm.input.$valid}}</tt>
-    <br/>
-    <tt>myForm.input.$error = {{myForm.input.$error}}</tt>
-    <br/>
-    <tt>myForm.$valid = {{myForm.$valid}}</tt>
-    <br/>
-    <tt>myForm.$error.required = {{!!myForm.$error.required}}</tt>
-    <br/>
-    <tt>myForm.$error.url = {{!!myForm.$error.url}}</tt>
-    <br/> -->
 </form>
 
-<div ng-show="loading">
-    <img src="img/loading.gif"/>
+<div ng-show="error">
+    {{error}}
 </div>
 
-<div ng-hide="loading" ng-repeat="(tag, count) in tags">
-    {{tag}} : {{count}}
+<div ng-hide="error" ng-repeat="(tag, count) in tags">
+    <span class="tag"><<span class="text">{{tag}}</span>></span> ({{count}})
 </div>
