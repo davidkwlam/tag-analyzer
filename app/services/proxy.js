@@ -5,10 +5,10 @@
         .module('app')
         .factory('Proxy', Proxy);
 
-    function Proxy($http, PROXY_SERVER) {
+    function Proxy($http, CONSTANTS) {
         return {
             get: function(url) {
-                return $http.get(PROXY_SERVER + url);
+                return $http.get(CONSTANTS.PROXY_SERVER + url);
             },
         };
     };
