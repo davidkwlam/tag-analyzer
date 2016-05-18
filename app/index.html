@@ -14,8 +14,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
     <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
-    <link rel="stylesheet" href="app.css">
-    <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+    <link rel="stylesheet" href="css/app.css">
+    <link rel='stylesheet' href='bower_components/angular-loading-bar/build/loading-bar.min.css'>
 </head>
 
 <body>
@@ -30,7 +30,7 @@
     <h1>
         Tag Analyzer
     </h1>
-    <p>A tool for listing the tags used by a page.</p>
+    <p>A tool for listing the tags in a page.</p>
 
     <div ng-view></div>
 
@@ -39,8 +39,11 @@
     <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
   -->
+    <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src='bower_components/angular-animate/angular-animate.min.js'></script>
+    <script src='bower_components/angular-loading-bar/build/loading-bar.min.js'></script>
     <script src="app.js"></script>
     <script src="results/results.js"></script>
     <script src="services/proxy.js"></script>

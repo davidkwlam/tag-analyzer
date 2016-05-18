@@ -23,3 +23,11 @@
     content: "";
     padding: 0;
 }
+.tag {
+    font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    text-transform: lowercase;
+    color: #333;
+}
+.tag .text {
+    color: #63a35c;
+}

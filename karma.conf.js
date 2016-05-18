@@ -7,8 +7,11 @@ module.exports = function(config) {
             'app/bower_components/angular/angular.js',
             'app/bower_components/angular-route/angular-route.js',
             'app/bower_components/angular-mocks/angular-mocks.js',
-            'app/components/**/*.js',
-            'app/view*/**/*.js'
+            'app/bower_components/angular-animate/angular-animate.js',
+            'app/bower_components/angular-loading-bar/build/loading-bar.js',
+            'app/app.js',
+            'app/results/**/*.js',
+            'app/services/**/*.js'
         ],
 
         autoWatch: true,
@@ -28,6 +31,5 @@ module.exports = function(config) {
             outputFile: 'test_out/unit.xml',
             suite: 'unit'
         }
-
     });
 };

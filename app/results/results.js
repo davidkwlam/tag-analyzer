@@ -24,19 +24,21 @@
         $scope.url = 'http://google.com';
 
         function getTags(url) {
-            $scope.loading = true;
-            $scope.tags = {};
+            if (!url) {
+                return;
+            }
 
-            Proxy.getPage(url)
-                .then(function(body) {
-                    var doc = Parser.getDocumentFromString(body);
-                    $scope.tags = Parser.getTagsInDocument(doc);
+            $scope.tags = {};
+            $scope.error = "";
+
+            Proxy.get(url)
+                .then(function(response) {
+                    var result = Parser.getTags(response.data);
+                    $scope.tags = result["tags"];
+                    $scope.error = result["error"];
                 })
                 .catch(function(response) {
-                    console.log(response.status); // TODO handle GET errors
-                })
-                .finally(function() {
-                    $scope.loading = false;
+                    $scope.error = response.statusText + ' (' + response.status + ')';
                 });
         };
     };
