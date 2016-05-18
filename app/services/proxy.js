@@ -5,11 +5,10 @@
         .module('app')
         .factory('Proxy', Proxy);
 
-    function Proxy($http) {
+    function Proxy($http, PROXY_SERVER) {
         return {
-            // TODO Write unit tests
             get: function(url) {
-                return $http.get('https://cors-anywhere.herokuapp.com/' + url); // TODO self-host this and put into a config file
+                return $http.get(PROXY_SERVER + url);
             },
         };
     };

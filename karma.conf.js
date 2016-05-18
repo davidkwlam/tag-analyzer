@@ -10,6 +10,7 @@ module.exports = function(config) {
             'app/bower_components/angular-animate/angular-animate.js',
             'app/bower_components/angular-loading-bar/build/loading-bar.js',
             'app/app.js',
+            'app/app.config.js',
             'app/results/**/*.js',
             'app/services/**/*.js'
         ],
