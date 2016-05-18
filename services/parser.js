@@ -39,7 +39,9 @@
                 var parserResult = createDocumentFromString(body);
 
                 if (parserResult["error"]) {
-                    return resultOfBodyParsing;
+                    return {
+                        "error": parserResult["error"]
+                    };
                 }
 
                 return {

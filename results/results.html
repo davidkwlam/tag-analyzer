@@ -1,12 +1,40 @@
-<form name="myForm">
-    <input type="text" name="input" ng-model="url" required>
-    <input type="submit" ng-click="getTags(url)" value="Go" />
-</form>
+<div class="main">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-sm-6 col-sm-offset-3">
+                <h1>Tag Analyzer</h1>
+            </div>
+        </div>
 
-<div ng-show="error">
-    {{error}}
-</div>
+        <div class="row text-center">
+            <div class="col-sm-6 col-sm-offset-3">
+                <p>A tool for listing the tags in a page</p>
+            </div>
+        </div>
 
-<div ng-hide="error" ng-repeat="(tag, count) in tags">
-    <span class="tag"><<span class="text">{{tag}}</span>></span> ({{count}})
+        <div class="row text-center">
+            <div class="col-sm-6 col-sm-offset-3">
+                <div class="row">
+                    <form role="form" class="form-inline">
+                        <!-- <div class="form-group col-sm-9"> -->
+                        <input type="text" name="input" ng-model="url" class="form-control" placeholder="URL" required>
+                        <!-- </div> -->
+                        <button type="submit" ng-click="getTags(url)" class="btn btn-default" />Go</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="row text-center">
+            <div class="col-sm-6 col-sm-offset-3">
+                <div ng-show="error">
+                    {{error}}
+                </div>
+
+                <div ng-hide="error" ng-repeat="(tag, count) in tags">
+                    <span class="tag"><<span class="text">{{tag}}</span>></span> ({{count}})
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
