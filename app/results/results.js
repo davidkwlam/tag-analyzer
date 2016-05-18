@@ -7,7 +7,7 @@
 
     function Results($scope, Proxy, Parser) {
         $scope.getTags = getTags;
-        $scope.url = 'google.com';
+        $scope.url = "";
 
         function getTags(url) {
             if (!url) {
