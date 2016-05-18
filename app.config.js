@@ -3,7 +3,9 @@
 
     angular
         .module('app')
-        .constant('PROXY_SERVER', 'https://cors-anywhere.herokuapp.com/') // TODO self-host
+        .constant('CONSTANTS', {
+            'PROXY_SERVER': 'http://tag-analyzer-cors-proxy.herokuapp.com/'
+        })
         .config(['$routeProvider', function($routeProvider) {
             $routeProvider.otherwise({
                 redirectTo: '/results'
