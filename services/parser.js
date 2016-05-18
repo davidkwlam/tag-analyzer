@@ -35,7 +35,6 @@
         };
 
         return {
-            // TODO Write unit tests
             getTags: function(body) {
                 var parserResult = createDocumentFromString(body);
 
@@ -46,7 +45,7 @@
                 return {
                     "tags": getTagsInDocument(parserResult["document"])
                 };
-            }
+            },
         };
     };
 })();

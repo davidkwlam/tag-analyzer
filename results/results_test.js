@@ -1,20 +1,23 @@
 'use strict';
 
-describe('app.results module', function() {
+describe('ResultsController', function() {
+    var scope;
 
     beforeEach(function() {
-        module('app.results');
+        module('app');
 
-        
+        inject(function($rootScope, $controller) {
+            scope = $rootScope.$new();
+            $controller('Results', {
+                $scope: scope
+            });
+        });
     });
 
     describe('Results controller', function() {
 
-        it('should ....', inject(function($controller) {
-            //spec body
-            var resultsCtrl = $controller('Results');
-            expect(resultsCtrl).toBeDefined();
-        }));
-
+        it('should ....', function() {
+            expect(scope.error).toBe(undefined);
+        });
     });
 });
