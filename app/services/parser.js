@@ -7,7 +7,7 @@
 
     function Parser() {
         function createDocumentFromString(str) {
-            var isHTML = str.toLowerCase().indexOf('<!doctype') > -1;
+            var isHTML = str.toLowerCase().indexOf('<html') > -1;
             var doc = (new DOMParser()).parseFromString(str, isHTML ? 'text/html' : 'application/xml');
 
             var errors = doc.getElementsByTagName('parsererror');
