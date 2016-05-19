@@ -3,9 +3,12 @@
 
     angular
         .module('app')
-        .controller('Results', Results);
+        .controller('Home', Home);
 
-    function Results($scope, Proxy, Parser) {
+    function Home($scope, Proxy, Parser) {
+        $scope.predicate = 'tableNumber';
+        $scope.reverse = false;
+        $scope.order = order;
         $scope.getTags = getTags;
         $scope.url = "";
 
@@ -14,7 +17,7 @@
                 return;
             }
 
-            $scope.tags = {};
+            $scope.tags = [];
             $scope.error = "";
 
             Proxy.get(url)
@@ -26,6 +29,14 @@
                 .catch(function(response) {
                     $scope.error = response.statusText + ' (' + response.status + ')';
                 });
+        };
+
+        function order(predicate) {
+            if ($scope.predicate === predicate) {
+                $scope.reverse = !$scope.reverse;
+            }
+
+            $scope.predicate = predicate;
         };
     };
 })();

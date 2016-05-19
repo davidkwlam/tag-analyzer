@@ -8,7 +8,7 @@
         </div>
 
         <div class="row text-center">
-            <div class="col-sm-6 col-sm-offset-3">
+            <div class="col-sm-8 col-sm-offset-2">
                 <form class="input-group input-group-lg">
                     <input type="text" name="input" ng-model="url" class="form-control" placeholder="URL" required>
                     <span class="input-group-btn">
@@ -22,12 +22,21 @@
             </div>
         </div>
 
-        <div class="row text-center" ng-repeat="(tag, count) in tags" ng-hide="error">
-            <div class="col-xs-3 col-xs-offset-3">
-                <span class="tag"><<span class="text">{{tag}}</span>></span>
+        <div class="row text-center column-header" ng-show="tags.length">
+            <div class="col-xs-4 col-xs-offset-2">
+                <span ng-click="order('tagName')" class="pointer">Tag <i class="fa fa-caret-down"></i></span>
             </div>
-            <div class="col-xs-3">
-                {{count}}
+            <div class="col-xs-4">
+                <span ng-click="order('count')" class="pointer">Count <i class="fa fa-caret-down"></i></span>
+            </div>
+        </div>
+
+        <div class="row text-center" ng-repeat="tag in tags | orderBy:predicate:reverse" ng-hide="error">
+            <div class="col-xs-4 col-xs-offset-2">
+                <span class="tag"><<span class="text">{{tag.tagName}}</span>></span>
+            </div>
+            <div class="col-xs-4">
+                {{tag.count}}
             </div>
         </div>
     </div>
