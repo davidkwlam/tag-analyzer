@@ -7,31 +7,30 @@
 
     function Parser() {
         function createDocumentFromString(str) {
-            var isHTML = str.toLowerCase().indexOf("<!doctype") > -1;
-            var doc = (new DOMParser()).parseFromString(str, isHTML ? "text/html" : "application/xml");
+            var isHTML = str.toLowerCase().indexOf('<!doctype') > -1;
+            var doc = (new DOMParser()).parseFromString(str, isHTML ? 'text/html' : 'application/xml');
 
-            var errors = doc.getElementsByTagName("parsererror");
+            var errors = doc.getElementsByTagName('parsererror');
             if (errors.length) {
                 return {
-                    "error": "Not a valid HTML or XML document!" // TODO get error message from parser?
+                    'error': 'Could not parse tags'
                 };
             }
 
             return {
-                "document": doc
+                'document': doc
             };
         };
 
         function getTagsInDocument(doc) {
             var results = {};
-            var elements = doc.getElementsByTagName("*"); // TODO check this is correct usage
+            var elements = doc.getElementsByTagName('*');
 
             for (var i = 0; i < elements.length; i++) {
                 var tagName = elements[i].tagName;
                 results[tagName] = results[tagName] ? results[tagName] + 1 : 1;
             }
 
-            // return results;
             return _.map(results, function(val, key) {
                 return {
                     'tagName': key,
@@ -44,14 +43,14 @@
             getTags: function(body) {
                 var parserResult = createDocumentFromString(body);
 
-                if (parserResult["error"]) {
+                if (parserResult['error']) {
                     return {
-                        "error": parserResult["error"]
+                        'error': parserResult['error']
                     };
                 }
 
                 return {
-                    "tags": getTagsInDocument(parserResult["document"])
+                    'tags': getTagsInDocument(parserResult['document'])
                 };
             },
         };

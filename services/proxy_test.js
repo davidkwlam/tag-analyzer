@@ -7,9 +7,9 @@ describe('Parser', function() {
         module('app');
 
         inject(function($injector) {
-            proxy = $injector.get("Proxy");
-            $httpBackend = $injector.get("$httpBackend");
-            CONSTANTS = $injector.get("CONSTANTS");
+            proxy = $injector.get('Proxy');
+            $httpBackend = $injector.get('$httpBackend');
+            CONSTANTS = $injector.get('CONSTANTS');
         });
     });
 

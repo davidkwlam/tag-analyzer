@@ -7,7 +7,7 @@ describe('Parser', function() {
         module('app');
 
         inject(function($injector) {
-            parser = $injector.get("Parser");
+            parser = $injector.get('Parser');
         });
     });
 
@@ -49,7 +49,7 @@ describe('Parser', function() {
     });
 
     it('should return an error when given javascript', function() {
-        var body = 'console.log("Hello World")';
+        var body = 'console.log('Hello World')';
 
         var result = parser.getTags(body);
         var error = result['error'];

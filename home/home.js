@@ -10,7 +10,7 @@
         $scope.reverse = false;
         $scope.order = order;
         $scope.getTags = getTags;
-        $scope.url = "";
+        $scope.url = '';
 
         function getTags(url) {
             if (!url) {
@@ -18,13 +18,13 @@
             }
 
             $scope.tags = [];
-            $scope.error = "";
+            $scope.error = '';
 
             Proxy.get(url)
                 .then(function(response) {
                     var result = Parser.getTags(response.data);
-                    $scope.tags = result["tags"];
-                    $scope.error = result["error"];
+                    $scope.tags = result['tags'];
+                    $scope.error = result['error'];
                 })
                 .catch(function(response) {
                     $scope.error = response.statusText + ' (' + response.status + ')';
