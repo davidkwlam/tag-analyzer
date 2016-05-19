@@ -9,19 +9,13 @@ As much as possible, this project adheres to coding style outlined in the [Angul
 
 ### Getting started
 
-1. Install the dev and front-end dependencies by running:
-```shell
-npm install
-```
-3. Serve the assets by running:
-```shell
-npm start
-```
-4. Browse to the app at `http://localhost:8000/app/index.html`.
+1. Install the dev and front-end dependencies by running `npm install`.
+2. Serve the assets by running `npm start`.
+3. Browse to the app at `http://localhost:8000/app/`.
 
 ### Testing
 
-There are tests! The easiest way to run the unit tests is to use the supplied npm script:
+We have tests! The easiest way to run the them is to use the supplied npm script:
 
 ```shell
 npm test
