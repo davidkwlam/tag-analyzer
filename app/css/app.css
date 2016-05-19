@@ -11,3 +11,6 @@ body {
 .tag .text {
     color: #63a35c;
 }
+.alert {
+  display: block;
+}
