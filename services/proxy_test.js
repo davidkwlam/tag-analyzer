@@ -23,7 +23,7 @@ describe('Parser', function() {
     });
 
     it('should call the proxy server with a given url', function() {
-        var url = 'www.google.com';
+        var url = 'www.someurl.com';
         var data = '<html></html>';
         var resultData;
 
@@ -35,7 +35,7 @@ describe('Parser', function() {
             resultData = result.data;
         });
         $httpBackend.flush();
-        
+
         expect(resultData).toBe(data);
     });
 });
