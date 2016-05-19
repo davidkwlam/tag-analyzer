@@ -31,7 +31,13 @@
                 results[tagName] = results[tagName] ? results[tagName] + 1 : 1;
             }
 
-            return results;
+            // return results;
+            return _.map(results, function(val, key) {
+                return {
+                    'tagName': key,
+                    'count': val
+                }
+            })
         };
 
         return {

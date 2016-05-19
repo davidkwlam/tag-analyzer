@@ -1,7 +1,6 @@
-/* app css stylesheet */
-
 body {
     font-family: 'Lato', sans-serif;
+    font-size: 20px;
 }
 .tag {
     font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
@@ -11,6 +10,13 @@ body {
 .tag .text {
     color: #63a35c;
 }
-.alert {
-  display: block;
+.input-group {
+    margin-bottom: 20px;
+}
+.column-header {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.pointer {
+    cursor: pointer;
 }

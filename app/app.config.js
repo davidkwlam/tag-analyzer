@@ -8,7 +8,7 @@
         })
         .config(['$routeProvider', function($routeProvider) {
             $routeProvider.otherwise({
-                redirectTo: '/results'
+                redirectTo: '/home'
             });
         }])
         .config(['cfpLoadingBarProvider', function(cfpLoadingBarProvider) {

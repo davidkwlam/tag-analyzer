@@ -80,7 +80,10 @@ describe('Parser', function() {
         expect(error).toBe(undefined);
         expect(tags).toBeDefined();
         expect(Object.keys(tags).length).toEqual(1);
-        expect(tags['sometag']).toEqual(1);
+        expect(tags).toEqual([{
+            tagName: 'sometag',
+            count: 1
+        }]);
     });
 
     it('should return the correct tags and tag count for an XML document with two tags', function() {
@@ -93,8 +96,13 @@ describe('Parser', function() {
         expect(error).toBe(undefined);
         expect(tags).toBeDefined();
         expect(Object.keys(tags).length).toEqual(2);
-        expect(tags['sometag']).toEqual(1);
-        expect(tags['anothertag']).toEqual(1);
+        expect(tags).toEqual([{
+            tagName: 'sometag',
+            count: 1
+        }, {
+            tagName: 'anothertag',
+            count: 1
+        }]);
     });
 
     it('should return the correct tags and tag count for an XML document with two tags that are the same', function() {
@@ -107,7 +115,10 @@ describe('Parser', function() {
         expect(error).toBe(undefined);
         expect(tags).toBeDefined();
         expect(Object.keys(tags).length).toEqual(1);
-        expect(tags['sometag']).toEqual(2);
+        expect(tags).toEqual([{
+            tagName: 'sometag',
+            count: 2
+        }]);
     });
 
     it('should return the correct tags and tag count for a simple HTML document', function() {
@@ -120,9 +131,16 @@ describe('Parser', function() {
         expect(error).toBe(undefined);
         expect(tags).toBeDefined();
         expect(Object.keys(tags).length).toEqual(3);
-        expect(tags['HTML']).toEqual(1);
-        expect(tags['HEAD']).toEqual(1);
-        expect(tags['BODY']).toEqual(1);
+        expect(tags).toEqual([{
+            tagName: 'HTML',
+            count: 1
+        }, {
+            tagName: 'HEAD',
+            count: 1
+        }, {
+            tagName: 'BODY',
+            count: 1
+        }]);
     });
 
     it('should return the correct tags and tag count for an HTML document with multiple tags', function() {
@@ -135,12 +153,25 @@ describe('Parser', function() {
         expect(error).toBe(undefined);
         expect(tags).toBeDefined();
         expect(Object.keys(tags).length).toEqual(6);
-        expect(tags['HTML']).toEqual(1);
-        expect(tags['HEAD']).toEqual(1);
-        expect(tags['TITLE']).toEqual(1);
-        expect(tags['BODY']).toEqual(1);
-        expect(tags['H1']).toEqual(1);
-        expect(tags['P']).toEqual(1);
+        expect(tags).toEqual([{
+            tagName: 'HTML',
+            count: 1
+        }, {
+            tagName: 'HEAD',
+            count: 1
+        }, {
+            tagName: 'TITLE',
+            count: 1
+        }, {
+            tagName: 'BODY',
+            count: 1
+        }, {
+            tagName: 'H1',
+            count: 1
+        }, {
+            tagName: 'P',
+            count: 1
+        }]);
     });
 
     it('should return the correct tags and tag count for an HTML document with multiple duplicate tags', function() {
@@ -153,9 +184,18 @@ describe('Parser', function() {
         expect(error).toBe(undefined);
         expect(tags).toBeDefined();
         expect(Object.keys(tags).length).toEqual(4);
-        expect(tags['HTML']).toEqual(1);
-        expect(tags['HEAD']).toEqual(1);
-        expect(tags['BODY']).toEqual(1);
-        expect(tags['H1']).toEqual(2);
+        expect(tags).toEqual([{
+            tagName: 'HTML',
+            count: 1
+        }, {
+            tagName: 'HEAD',
+            count: 1
+        }, {
+            tagName: 'BODY',
+            count: 1
+        }, {
+            tagName: 'H1',
+            count: 2
+        }]);
     });
 });

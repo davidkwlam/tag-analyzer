@@ -1,7 +1,7 @@
 'use strict';
 
-describe('Results', function() {
-    var Results, $q, $scope, Proxy, Parser, getDeferred;
+describe('Home', function() {
+    var Home, $q, $scope, Proxy, Parser, getDeferred;
 
     beforeEach(function() {
         module('app');
@@ -19,7 +19,7 @@ describe('Results', function() {
 
             spyOn(Proxy, 'get').and.callThrough();
 
-            Results = $controller('Results', {
+            Home = $controller('Home', {
                 '$scope': $scope,
                 'Proxy': Proxy,
                 'Parser': Parser
